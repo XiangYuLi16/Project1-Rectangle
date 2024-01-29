@@ -60,7 +60,7 @@ namespace Project1._1
 
             if (int.TryParse(numberArea.Text, out int value)) // Set a limit for the Area
             {
-                int maxValue = 250;    //This sets the height limit to 250 which is within the window size
+                int maxValue = 250;    //This sets the Area limit to 250 which is within the window size
                 numberArea.Text = Math.Min(value, maxValue).ToString();
             }
             else
