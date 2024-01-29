@@ -25,42 +25,50 @@ namespace Project1._1
             InitializeComponent();
         }
 
-        private void numberTextBox_TextChanged(object sender, TextChangedEventArgs e)    //Most of my research are based on chatgpt
+        //Height
+        private void numberHeight_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (int.TryParse(numberTextBox.Text, out int result))
+            if (int.TryParse(numberHeight.Text, out int result))
             {
-                myRec.Height = result + 100;    //The +100 behind sets a default height of 100 for the rectangle
+                Triangle.Points = new PointCollection
+                {
+                    new Point(200, 200),       // Bottom-left vertex
+                    new Point(250,120-result),        // Top vertex
+                    new Point(300, 200)   // Bottom-right vertex
+                };
             }
 
-            if (int.TryParse(numberTextBox.Text, out int value)) // Set a limit for the height
+            if (int.TryParse(numberHeight.Text, out int value)) // Set a limit for the Area
             {
-                int maxValue = 250;    //This sets the height limit to 250 which is within the window size
-                numberTextBox.Text = Math.Min(value, maxValue).ToString();
+                int maxValue = 120;    // This sets the Area limit to 250 which is within the window size
+                numberHeight.Text = Math.Min(value, maxValue).ToString();
             }
             else
             {
                 // Handle non-numeric input
-                numberTextBox.Text = "0";
+                numberHeight.Text = "0";
             }
         }
-
-        private void numberTextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        private void numberHeight_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !int.TryParse(e.Text, out int result);
         }
 
-        //Area
         private void numberArea_TextChanged(object sender, TextChangedEventArgs e)
         {
             if (int.TryParse(numberArea.Text, out int result))
             {
-                myRec.Height = result + 100;    //The +100 behind sets a default height of 100 for the rectangle
-                myRec.Width = result + 100;    //The +100 behind sets a default width of 100 for the rectangle
+                Triangle.Points = new PointCollection
+                {
+                    new Point(200-result, 200),       // Bottom-left vertex
+                    new Point(250,120-result),        // Top vertex
+                    new Point(300+result, 200)   // Bottom-right vertex
+                };
             }
 
             if (int.TryParse(numberArea.Text, out int value)) // Set a limit for the Area
             {
-                int maxValue = 250;    //This sets the Area limit to 250 which is within the window size
+                int maxValue = 120;    // This sets the Area limit to 250 which is within the window size
                 numberArea.Text = Math.Min(value, maxValue).ToString();
             }
             else
@@ -69,10 +77,23 @@ namespace Project1._1
                 numberArea.Text = "0";
             }
         }
-
         private void numberArea_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
             e.Handled = !int.TryParse(e.Text, out int result);
         }
+
+        private void Red_Click(object sender, RoutedEventArgs e)
+        {
+            // Set the Fill property of the Polygon (Triangle) to red
+            Triangle.Fill = Brushes.Red;
+        }
+
+        private void Blue_Click(object sender, RoutedEventArgs e)
+        {
+            // Set the Fill property of the Polygon (Triangle) to red
+            Triangle.Fill = Brushes.Blue;
+        }
+
+
     }
 }

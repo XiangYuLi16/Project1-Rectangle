@@ -7,11 +7,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Label Content="Height(0 to 250)" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <Rectangle x:Name="myRec" Fill="#FF2020A8" HorizontalAlignment="Left" Height="100" Stroke="Black" VerticalAlignment="Top" Width="100" Margin="166,27,0,0"/>
-        <TextBox x:Name="numberTextBox" HorizontalAlignment="Left" Height="23" Margin="10,44,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" FontSize="18" TextChanged="numberTextBox_TextChanged" PreviewTextInput="numberTextBox_PreviewTextInput"/>
-        <Label Content="Area(0 to 250)" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" FontSize="18"/>
-        <TextBox x:Name="numberArea" HorizontalAlignment="Left" Height="23" Margin="10,104,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" FontSize="18" TextChanged="numberArea_TextChanged" PreviewTextInput="numberArea_PreviewTextInput"/>
+
+        <Polygon x:Name="Triangle" Fill="#FF2020A8" Stroke="Black" Points="200,200 250,120 300,200"/>
+
+        <Label Content="Height(0 to 120)" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <Label Content="Area(0 to 120)" HorizontalAlignment="Left" Margin="10,87,0,0" VerticalAlignment="Top" FontSize="18"/>
+        <TextBox x:Name="numberHeight" HorizontalAlignment="Left" Height="23" Margin="13,59,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" FontSize="18" TextChanged="numberHeight_TextChanged" PreviewTextInput="numberHeight_PreviewTextInput"/>
+        <TextBox x:Name="numberArea" HorizontalAlignment="Left" Height="23" Margin="13,121,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="120" FontSize="18" TextChanged="numberArea_TextChanged" PreviewTextInput="numberArea_PreviewTextInput"/>
+        <Button x:Name="Red" Content="Red" HorizontalAlignment="Left" Margin="13,166,0,0" VerticalAlignment="Top" Width="38" Click="Red_Click" Height="24"/>
+        <Button x:Name="Blue" Content="Blue" HorizontalAlignment="Left" Margin="51,166,0,0" VerticalAlignment="Top" Width="38" Click="Blue_Click" Height="24" />
+
 
 
 
